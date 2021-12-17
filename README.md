@@ -1,2 +1,2 @@
 # stock-analysis
-Modeul 2 VBA repository
+Module 2 VBA repository
