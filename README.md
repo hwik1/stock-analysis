@@ -1,5 +1,5 @@
 # Writing & Refactoring Code to Analyze Stock Performance
-Module 2 Challenge completed by Hannah Wikum
+Module 2 Challenge completed by Hannah Wikum in December 2021
 
 ## Overview of Project
 ### Background
@@ -32,7 +32,7 @@ In 2017, all but one stock (TERP) had a positive return and DQ had the highest r
 ### Refactored Code
 For the second part of the analysis, I refactored the initial code to make it more efficient to run and then added formatting to improve readability. The numerical output results are identical, but the goal was to make the code run faster so it could be used for a larger data source (i.e. all stocks).
 
-In the initial code, you have to loop through up to 3,012 rows of data once for each ticker for a total of 12 times. To make it faster, I created an index of the Tickers called tickerIndex. This allowed the code to evaluate the total volume, starting price, and ending price for all tickers at once, instead of only looking for one ticker each time it looped through the data. Here is an example of using the ticker index to calculate total daily volumes instead of evaluating one ticker at a time:
+In the initial code, you have to loop through up to 3,012 rows of data once for each ticker for a total of 12 times. To make it faster, I created an index of the Tickers called tickerIndex. This allowed the code to evaluate the total volume, starting price, and ending price for all tickers at once, instead of only looking for one ticker each time it looped through the data. I also made the outputs for ticker, total volume, and return into arrays. Here is an example of using the ticker index to calculate total daily volumes instead of evaluating one ticker at a time:
 
 ![image](https://user-images.githubusercontent.com/93058069/147307194-9d03fd06-a2ff-49a4-88bc-541f87c3a810.png)
 
@@ -46,11 +46,16 @@ _2018_
 
 ![image](https://user-images.githubusercontent.com/93058069/147307574-40fbb240-fc4f-4ec9-83f1-8e9dee598270.png)
 
-That is a 79% time reduction for 2017 and 80% faster for 2018, so the refactoring was successful. Also, adding the number formatting and color coding (red is a negative return, green is a positive return) greatly improved the readability of the results, as you can see below.
+That is a 79% time reduction for 2017 and 80% faster for 2018, so the refactoring was successful. Also, adding the number formatting and color coding (red is a negative return, green is a positive return) greatly improved the readability of the results, as you can see below on resuls from 2017.
 
 ![image](https://user-images.githubusercontent.com/93058069/147307886-aacf50be-358a-45be-a4c7-577ad0e66e2f.png)
 
+## Summary
+Refactoring the code successfully decreased the run time per the challenge goal, but was it necessary beyond trying to get a good grade on this submission?
 
-### Summary
+### Pros/Cons of Refactoring Code
+There are several advantages of refactoring code. Taking the time to refactor makes your code more efficient, which is useful when dealing with large datasets. It also gives you the time to clean up the code so it is as clear and readable as possible, which would be helpful if you are intending to update the code in the future or want to share with others. On the negative side, it can take a long time to refactor (if it is even possible), which would be a waste of resources if your initial code produced the results you needed and you don't intend to reuse the code.
 
+### Pros/Cons of Initial versus Refactored Code
+For our dataset of annual data for 12 stocks, the initial code was sufficient to analyze the data and provide results quickly. The pro was that it was faster for me to build than the refactored code and I have an easier time understanding it even when I go back several days later, but the con is it would take a lot longer if you tried to use it to analyze results for more stocks, especially if you tried to look at the performance of the entire stock market. On the other hand, the advantage of the refactored code is that it does run faster, but the disadvantage is it is much more complex to build and understand. For this purpose, it took me significantly longer write the refactored code than time saved when it ran; I would have to run the code approximately 29,000 times before I would have recognized the time savings.
 
