@@ -12,5 +12,10 @@ In order to analyze the data so Steve can make a recommendation on how to best d
 ### Initial Code
 The first part of the analysis involved calculating the total daily volume and return for just DQ. I used VBA code to create headers for the stock name, total daily volume, and return, then found the last row of data, before getting into the for loop. The full code can be seen in my workbook, but I've highlighted the key for loop below:
 
+![image](https://user-images.githubusercontent.com/93058069/147300720-b8659138-3793-47a4-95d5-496cd96aed68.png)
+
+This for loop reads through every row to see if it contains data for DQ. If it does, it adds the daily volume to get a total daily volume at the end. If it is the first row that contains DQ, then it records the stock starting price. If it is the last row with DQ, then it records the stock ending price, both of which were used to calculate the year return. (Note: this is dependent on the data being grouped by ticker and data sorted oldest to newest record.) The results for DQ were not good - a **-63%** return for 2018!
+
+Since the results for DQ were not satisfactory, I modified the initial code to review the results for all 12 stocks.
 
 ### Refactored Code
